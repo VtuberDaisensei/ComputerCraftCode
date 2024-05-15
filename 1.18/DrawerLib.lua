@@ -10,6 +10,9 @@ function getAR()
     return nil
 end
 
+-- Get the Side in type.
+-- type: Peripheral Type
+-- reuturn: Side or nil
 function getTypeSide(type)
     for i , v in pairs(peripheral.getNames()) do
         if peripheral.getType(v) == type then
@@ -22,7 +25,7 @@ end
 
 ar = peripheral.wrap(getAR())
 
--- Draw the Rectangle with id in AR Device
+-- Draw the Rectangle with id in AR Device.
 -- id: Shape id
 -- minX: Shape's Left Side Position
 -- minY: Shape's Top Side Position
@@ -37,5 +40,6 @@ function drawRectangleWithId(id, minX, minY, maxX, maxY, color)
         ar.verticalLineWithId(id .. "RightLine", maxX, minY, maxY, color)
         return true
     end
+    
     return false
 end
